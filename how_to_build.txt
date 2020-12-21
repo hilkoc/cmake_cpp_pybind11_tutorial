@@ -1,0 +1,10 @@
+# for general info see
+# https://cmake.org/cmake/help/latest/guide/user-interaction/index.html#invoking-the-buildsystem
+cmake --build build/ --target all
+
+# cpp must be installed, before the cpp/tests  can be built
+cmake --build cpp/build/ --target all
+cmake --build cpp/build/ --target install
+cmake --build cpp/tests/build/ --target all
+# to run the cpp tests
+./cpp/tests/bin/test

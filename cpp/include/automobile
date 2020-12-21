@@ -2,5 +2,6 @@
 #define AUTOMOBILE_LIBRARY_H
 
 #include "automobile_bits/motorcycle.hpp"
+#include "automobile_bits/blackscholes.h"
 
 #endif
