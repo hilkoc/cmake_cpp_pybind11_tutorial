@@ -6,8 +6,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(automobile VERSION 0.1.0)
 
-# Include dir
-include_directories(/usr/local/include)
+# Include dir # modified this
+include_directories(/home/hilko/devprojects/hal/cpp/build/)
 
 # Src
 AUX_SOURCE_DIRECTORY(src SRC_FILES)
@@ -32,6 +32,11 @@ add_library(automobile SHARED ${SOURCE_FILES})
 target_include_directories(automobile PRIVATE include/automobile_bits)
 
 # Install
+
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+  set(CMAKE_INSTALL_PREFIX "/home/hilko/devprojects/hal/install" CACHE PATH "..." FORCE)
+endif()
+
 install(TARGETS automobile DESTINATION lib)
 
 # Install the headers
